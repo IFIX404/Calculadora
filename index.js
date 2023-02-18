@@ -1,7 +1,7 @@
 const operaciones = document.querySelector(".operaciones");
 const resultados = document.querySelector(".resultados");
 const teclas = document.querySelectorAll(".teclas");
-let esperandoNumeroParaRaiz = false;
+let operador = '';
 
 teclas.forEach((tecla) => {
   tecla.addEventListener("click", (event) => {
@@ -10,34 +10,32 @@ teclas.forEach((tecla) => {
       case "AC":
         operaciones.value = "";
         resultados.value = "";
-        esperandoNumeroParaRaiz = false;
         break;
       case "√":
-        esperandoNumeroParaRaiz = true;
+        operador = '√';
+        resultados.value = '';
+        operaciones.value += "√";
         break;
       case "𝜋":
-        operaciones.value += "math.pi";
-        esperandoNumeroParaRaiz = false;
+        operaciones.value += "π";
         break;
       case "=":
         try {
-          const expresion = operaciones.value;
+          const expresion = operaciones.value.replace(/π/, "(3.1415927)");
           console.log(expresion);
-          // Usamos math.evaluate en lugar de eval para evaluar la expresión matemática
           resultados.value = math.evaluate(expresion);
         } catch (e) {
           resultados.value = "Error";
         }
-        esperandoNumeroParaRaiz = false;
         break;
       case "⌫":
         operaciones.value = operaciones.value.slice(0, -1);
-        esperandoNumeroParaRaiz = false;
         break;
       default:
-        if (esperandoNumeroParaRaiz) {
-          operaciones.value += `sqrt(${teclaPresionada})`;
-          esperandoNumeroParaRaiz = false;
+        if (operador === '√') {
+          operaciones.value += teclaPresionada;
+          resultados.value = math.evaluate(`sqrt(${teclaPresionada})`);
+          operador = '';
         } else {
           operaciones.value += teclaPresionada;
         }

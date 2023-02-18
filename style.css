@@ -10,7 +10,7 @@ body {
 .calculadora {
   background-color: #6564dbff;
   text-align: center;
-  margin: 70px auto;
+  margin: 3rem auto 0;
   width: 35%;
   border-radius: 60px;
 }
