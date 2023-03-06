@@ -5,11 +5,11 @@ const teclas = document.querySelectorAll(".teclas");
 
 // Este objeto asigna un identificador a cada tecla que se va a utilizar en la calculadora
 const teclasBotones = {
-  "Enter": "equals",
-  "Backspace": "backspace",
-  "Escape": "clear",
+  Enter: "equals",
+  Backspace: "backspace",
+  Escape: "clear",
   "!": "exclamation",
-  "p": "pi",
+  p: "pi",
   "^": "power",
   "(": "left-paren",
   ")": "right-paren",
@@ -19,22 +19,22 @@ const teclasBotones = {
   "-": "subtract",
   "+": "add",
   ".": "decimal",
-  "0": "zero",
-  "1": "one",
-  "2": "two",
-  "3": "three",
-  "4": "four",
-  "5": "five",
-  "6": "six",
-  "7": "seven",
-  "8": "eight",
-  "9": "nine"
+  0: "zero",
+  1: "one",
+  2: "two",
+  3: "three",
+  4: "four",
+  5: "five",
+  6: "six",
+  7: "seven",
+  8: "eight",
+  9: "nine",
 };
 
 // Variable que almacena la última tecla presionada
-let ultimaTeclaPresionada = '';
+let ultimaTeclaPresionada = "";
 // Variable que almacena el último operador utilizado
-let operador = '';
+let operador = "";
 
 // Este objeto define las funciones que se ejecutarán cuando se presione cada tecla
 const actions = {
@@ -76,31 +76,43 @@ const actions = {
   default: (teclaPresionada) => {
     // Si se presiona un dígito o "π", o si aún no se ha agregado ninguna operación y se presiona "-", "√" o "(",
     // entonces se agrega la tecla presionada a la cadena de operaciones.
-    if (/[\dπ]/.test(teclaPresionada) || (!operaciones.value && /[-√(]/.test(teclaPresionada))) {
+    if (
+      /[\dπ]/.test(teclaPresionada) ||
+      (!operaciones.value && /[-√(]/.test(teclaPresionada))
+    ) {
       operaciones.value += teclaPresionada;
     }
     // Si se presiona un operador aritmético ("+", "-", "*", "/", "%", "^") y el último carácter de la cadena de operaciones es un dígito o "π",
     // entonces se agrega la tecla presionada a la cadena de operaciones y se almacena como el operador actual.
-    else if (/[\+\-\*\/%\^]/.test(teclaPresionada) && /[\dπ)]/.test(operaciones.value.slice(-1))) {
+    else if (
+      /[\+\-\*\/%\^]/.test(teclaPresionada) &&
+      /[\dπ)]/.test(operaciones.value.slice(-1))
+    ) {
       operaciones.value += teclaPresionada;
       operador = teclaPresionada;
     }
     // Si se presiona ".", se agrega a la cadena de operaciones.
-    else if (teclaPresionada === '.' && !/\./.test(operaciones.value.slice(-1))) {
+    else if (
+      teclaPresionada === "." &&
+      !/\./.test(operaciones.value.slice(-1))
+    ) {
       operaciones.value += teclaPresionada;
-    }    
+    }
     // Si se presiona "(", se agrega a la cadena de operaciones.
-    else if (teclaPresionada === '(') {
+    else if (teclaPresionada === "(") {
       operaciones.value += teclaPresionada;
     }
     // Si se presiona ")", se agrega a la cadena de operaciones solo si el número de paréntesis abiertos es mayor que el número de paréntesis cerrados.
-    else if (teclaPresionada === ')') {
-      if (operaciones.value.split('(').length > operaciones.value.split(')').length) {
+    else if (teclaPresionada === ")") {
+      if (
+        operaciones.value.split("(").length >
+        operaciones.value.split(")").length
+      ) {
         operaciones.value += teclaPresionada;
       }
     }
-  }
-}  
+  },
+};
 
 teclas.forEach((tecla) => {
   tecla.addEventListener("click", (event) => {
@@ -126,7 +138,7 @@ function clickBoton(id) {
   boton.click();
 }
 
-document.addEventListener('keydown', function(event) {
+document.addEventListener("keydown", function (event) {
   const tecla = event.key;
   if (teclasBotones.hasOwnProperty(tecla)) {
     const idBoton = teclasBotones[tecla];

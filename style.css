@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
 * {
   margin: 0%;
   padding: 0%;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 body {
   background: #0d1317ff;
@@ -10,9 +10,9 @@ body {
 .calculadora {
   background-color: #6564dbff;
   text-align: center;
-  margin: 3rem auto 0;
-  width: 35%;
-  border-radius: 60px;
+  margin: 1rem auto 0;
+  width: 50%;
+  border-radius: 80px;
 }
 .container {
   padding: 30px 1px;
@@ -24,9 +24,10 @@ body {
   margin-bottom: 20px;
 }
 .operaciones {
+  margin: 10px 0 0 0;
   width: 80%;
   height: 30px;
-  outline: none; 
+  outline: none;
   border-radius: 30px 30px 0 0;
   border: none;
   text-align: end;
@@ -41,15 +42,14 @@ body {
   border: none;
   text-align: end;
   padding-right: 1rem;
-  font-size: 2.4rem;  
+  font-size: 2.4rem;
 }
 .teclas {
   font-size: 20px;
-  width: 20%;
+  width: 15%;
   height: 50px;
-  margin: 5px 0;
-  outline: hidden;
-  color: #FFFFFF;
+  margin: 11px 18px;
+  color: #ffffff;
   cursor: pointer;
   background-color: #101d42ff;
   border: none;
@@ -58,4 +58,58 @@ body {
 }
 .teclas:hover {
   background-color: #232ed1ff;
+}
+
+@media screen and (min-width: 581px) and (max-width: 1023px) {
+  .calculadora {
+    width: 95%;
+    margin: 1rem auto;
+  }
+  .operaciones {
+    width: 85%;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+  .valores {
+    margin-bottom: 15px;
+  }
+  .resultados {
+    width: 85%;
+    height: 40px;
+    font-size: 1.9rem;
+  }
+  .teclas {
+    font-size: 1.2rem;
+    width: 16%;
+    height: 45px;
+    margin: 10px 20px;
+    border-radius: 30px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .calculadora {
+    width: 100vw;
+    margin: 1rem auto;
+    border-radius: 55px;
+  }
+  .operaciones {
+    width: 80%;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+  .valores {
+    margin-bottom: 5px;
+  }
+  .resultados {
+    width: 80%;
+    height: 30px;
+    font-size: 1.5rem;
+  }
+  .teclas {
+    font-size: 0.9rem;
+    width: 16%;
+    height: 40px;
+    margin: 10px 10px;
+    border-radius: 30px;
+  }
 }
