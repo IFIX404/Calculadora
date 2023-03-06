@@ -21,7 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .operaciones {
   margin: 10px 0 0 0;
@@ -59,57 +59,54 @@ body {
 .teclas:hover {
   background-color: #232ed1ff;
 }
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 767px) {
   .calculadora {
-    width: 100vw;
-    margin: 1rem auto;
-    border-radius: 55px;
+    margin: 2rem auto 0;
+    width: 100%;
+    border-radius: 50px;
   }
   .operaciones {
-    width: 80%;
-    height: 30px;
-    font-size: 1.2rem;
-  }
-  .valores {
-    margin-bottom: 5px;
+    margin: 8px 0 0 0;
+    width: 88%;
+    height: 60px;
+    border-radius: 40px 40px 0 0;
+    font-size: 2.4rem;
   }
   .resultados {
-    width: 80%;
-    height: 30px;
-    font-size: 1.5rem;
+    width: 88%;
+    height: 80px;
+    border-radius: 0 0 40px 40px;
+    font-size: 3.4rem;
   }
   .teclas {
-    font-size: 0.9rem;
-    width: 16%;
-    height: 40px;
-    margin: 50px 10px;
-    border-radius: 30px;
+    font-size: 2rem;
+    width: 18%;
+    height: 70px;
+    margin: 18px 18px;
   }
 }
-
-@media screen and (min-width: 581px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .calculadora {
-    width: 95%;
-    margin: 1rem auto;
+    margin: 5rem auto 0;
+    width: 94%;
   }
   .operaciones {
-    width: 85%;
-    height: 30px;
-    font-size: 1.2rem;
-  }
-  .valores {
-    margin-bottom: 15px;
+    margin: 8px 0 0 0;
+    width: 88%;
+    height: 60px;
+    border-radius: 44px 44px 0 0;
+    font-size: 2.7rem;
   }
   .resultados {
-    width: 85%;
-    height: 40px;
-    font-size: 1.9rem;
+    width: 88%;
+    height: 80px;
+    border-radius: 0 0 40px 40px;
+    font-size: 3.7rem;
   }
   .teclas {
-    font-size: 1.2rem;
-    width: 16%;
-    height: 45px;
-    margin: 10px 20px;
-    border-radius: 30px;
+    font-size: 2.4rem;
+    width: 20%;
+    height: 70px;
+    margin: 18px 10px;
   }
 }
