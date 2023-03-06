@@ -59,6 +59,33 @@ body {
 .teclas:hover {
   background-color: #232ed1ff;
 }
+@media screen and (max-width: 580px) {
+  .calculadora {
+    width: 100vw;
+    margin: 1rem auto;
+    border-radius: 55px;
+  }
+  .operaciones {
+    width: 80%;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+  .valores {
+    margin-bottom: 5px;
+  }
+  .resultados {
+    width: 80%;
+    height: 30px;
+    font-size: 1.5rem;
+  }
+  .teclas {
+    font-size: 0.9rem;
+    width: 16%;
+    height: 40px;
+    margin: 10px 10px;
+    border-radius: 30px;
+  }
+}
 
 @media screen and (min-width: 581px) and (max-width: 1023px) {
   .calculadora {
@@ -83,34 +110,6 @@ body {
     width: 16%;
     height: 45px;
     margin: 10px 20px;
-    border-radius: 30px;
-  }
-}
-@media screen and (max-width: 580px) {
-  .calculadora {
-    width: 100vw;
-    height: 95vw;
-    margin: 1rem auto;
-    border-radius: 55px;
-  }
-  .operaciones {
-    width: 80%;
-    height: 30px;
-    font-size: 1.2rem;
-  }
-  .valores {
-    margin-bottom: 5px;
-  }
-  .resultados {
-    width: 80%;
-    height: 30px;
-    font-size: 1.5rem;
-  }
-  .teclas {
-    font-size: 0.9rem;
-    width: 16%;
-    height: 40px;
-    margin: 10px 10px;
     border-radius: 30px;
   }
 }
